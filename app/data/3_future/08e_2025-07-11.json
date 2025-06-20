@@ -1,0 +1,87 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "PRW",
+      "MLB"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "MU"
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "B 008"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "THO"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "MLB"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "GTS"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "LRS Förder"
+    ],
+    "teachers": [
+      "JAK"
+    ],
+    "rooms": [
+      "G 2"
+    ],
+    "info": "cancelled"
+  }
+]

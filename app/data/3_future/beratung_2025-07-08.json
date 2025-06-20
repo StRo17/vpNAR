@@ -1,0 +1,45 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "LB"
+    ],
+    "teachers": [
+      "JAK"
+    ],
+    "rooms": [
+      "A 104"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "END",
+      "LUE"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "QUAD"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  }
+]

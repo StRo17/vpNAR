@@ -1,0 +1,32 @@
+[
+  {
+    "status": "ENTFÄLLT",
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "SAL"
+    ],
+    "rooms": [
+      "A 207"
+    ],
+    "info": ""
+  },
+  {
+    "status": "NEU",
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "LBS"
+    ],
+    "rooms": [
+      "A 207"
+    ],
+    "info": ""
+  }
+]

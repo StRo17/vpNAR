@@ -1,0 +1,484 @@
+[
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "GKN",
+      "KRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "GKN",
+      "KRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "GKN",
+      "KRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "GKN",
+      "KRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "GKN",
+      "KRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "GKN",
+      "KRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "SW-GK2"
+    ],
+    "teachers": [
+      "UNG"
+    ],
+    "rooms": [
+      "C 206"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "SW-GK4"
+    ],
+    "teachers": [
+      "BEN"
+    ],
+    "rooms": [
+      "C 206"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "SP-GK1"
+    ],
+    "teachers": [
+      "BRN"
+    ],
+    "rooms": [
+      "SH 1"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "SP-GK2"
+    ],
+    "teachers": [
+      "BUK"
+    ],
+    "rooms": [
+      "SH 1"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "S0-GK2"
+    ],
+    "teachers": [
+      "SEL"
+    ],
+    "rooms": [
+      "B 123"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "GE-GK1"
+    ],
+    "teachers": [
+      "SZK"
+    ],
+    "rooms": [
+      "C 206"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "GE-GK3"
+    ],
+    "teachers": [
+      "RGR"
+    ],
+    "rooms": [
+      "C 207"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "BI-GK2"
+    ],
+    "teachers": [
+      "ROET"
+    ],
+    "rooms": [
+      "A 033"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "PH-GK2"
+    ],
+    "teachers": [
+      "MUL"
+    ],
+    "rooms": [
+      "A 031"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "KU-GK1"
+    ],
+    "teachers": [
+      "COL"
+    ],
+    "rooms": [
+      "E 115"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "M-GK1"
+    ],
+    "teachers": [
+      "SUD"
+    ],
+    "rooms": [
+      "C 202"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "M-GK2"
+    ],
+    "teachers": [
+      "ART"
+    ],
+    "rooms": [
+      "C 207"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "M-GK3"
+    ],
+    "teachers": [
+      "REH"
+    ],
+    "rooms": [
+      "C 201"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "M-GK4"
+    ],
+    "teachers": [
+      "SMI"
+    ],
+    "rooms": [
+      "C 202"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "D-GK2"
+    ],
+    "teachers": [
+      "GRM"
+    ],
+    "rooms": [
+      "C 207"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "D-GK4"
+    ],
+    "teachers": [
+      "GRI"
+    ],
+    "rooms": [
+      "C 206"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "D-GK5"
+    ],
+    "teachers": [
+      "GRI"
+    ],
+    "rooms": [
+      "C 203"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "D-GK6"
+    ],
+    "teachers": [
+      "KRM"
+    ],
+    "rooms": [
+      "C 203"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "VX-D-VTF1"
+    ],
+    "teachers": [
+      "GRI"
+    ],
+    "rooms": [
+      "B 122"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "E5-GK1"
+    ],
+    "teachers": [
+      "SZK"
+    ],
+    "rooms": [
+      "C 206"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "E5-GK2"
+    ],
+    "teachers": [
+      "KRM"
+    ],
+    "rooms": [
+      "E 016"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "E5-GK5"
+    ],
+    "teachers": [
+      "GKN"
+    ],
+    "rooms": [
+      "E 005"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "E5-GK6"
+    ],
+    "teachers": [
+      "QDF"
+    ],
+    "rooms": [
+      "E 018"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "EK-GK2"
+    ],
+    "teachers": [
+      "QST"
+    ],
+    "rooms": [
+      "E 017"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "CH-GK2"
+    ],
+    "teachers": [
+      "ETK"
+    ],
+    "rooms": [
+      "A 037"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "L7-GK1"
+    ],
+    "teachers": [
+      "MSK"
+    ],
+    "rooms": [
+      "B 124"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "L7-GK2"
+    ],
+    "teachers": [
+      "HGO"
+    ],
+    "rooms": [
+      "E 005"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "S9-GK1"
+    ],
+    "teachers": [
+      "MON"
+    ],
+    "rooms": [
+      "B 124"
+    ],
+    "info": "cancelled"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "BI"
+    ],
+    "teachers": [
+      "HAN"
+    ],
+    "rooms": [
+      "A 207"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "TSA"
+    ],
+    "rooms": [
+      "G 3"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "SDT"
+    ],
+    "rooms": [
+      "A 103"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "RGR"
+    ],
+    "rooms": [
+      "B 123"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "HAN"
+    ],
+    "rooms": [
+      "A 207"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "LBS"
+    ],
+    "rooms": [
+      "A 207"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "PFE"
+    ],
+    "rooms": [
+      "B 122"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "KR"
+    ],
+    "teachers": [
+      "MSK"
+    ],
+    "rooms": [
+      "B 224"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "ER"
+    ],
+    "teachers": [
+      "HOF"
+    ],
+    "rooms": [
+      "B 122"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "IRU"
+    ],
+    "teachers": [
+      "ALW"
+    ],
+    "rooms": [
+      "E 109"
+    ],
+    "info": ""
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "PK"
+    ],
+    "teachers": [
+      "FLI"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "GE"
+    ],
+    "teachers": [
+      "JUN"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "BAL"
+    ],
+    "rooms": [
+      "C 106"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "GKN"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "GON"
+    ],
+    "rooms": [
+      "B 112"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "KU"
+    ],
+    "teachers": [
+      "KLK"
+    ],
+    "rooms": [
+      "E 015"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "REN"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KR"
+    ],
+    "teachers": [
+      "WRZ"
+    ],
+    "rooms": [
+      "E 017"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KR"
+    ],
+    "teachers": [
+      "MSK"
+    ],
+    "rooms": [
+      "B 122"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "ER"
+    ],
+    "teachers": [
+      "HOF"
+    ],
+    "rooms": [
+      "B 223"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "IRU"
+    ],
+    "teachers": [
+      "ACI"
+    ],
+    "rooms": [
+      "A 102"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "IRU"
+    ],
+    "teachers": [
+      "CLK"
+    ],
+    "rooms": [
+      "A 206"
+    ],
+    "info": ""
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "BI"
+    ],
+    "teachers": [
+      "QUAD"
+    ],
+    "rooms": [
+      "A 032"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "MU"
+    ],
+    "teachers": [
+      "TAK"
+    ],
+    "rooms": [
+      "B 007"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KU"
+    ],
+    "teachers": [
+      "COL"
+    ],
+    "rooms": [
+      "E 115"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "D-För"
+    ],
+    "teachers": [
+      "AMO"
+    ],
+    "rooms": [
+      "E 005"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "D-För"
+    ],
+    "teachers": [
+      "PFE"
+    ],
+    "rooms": [
+      "A 102"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "MAU"
+    ],
+    "rooms": [
+      "A 206"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "E-För"
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "LRS Förder"
+    ],
+    "teachers": [
+      "REN"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": "cancelled"
+  }
+]

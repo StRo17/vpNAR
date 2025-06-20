@@ -1,0 +1,300 @@
+[
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "AMO",
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "AMO",
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "AMO",
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "AMO"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "S8 Diff"
+    ],
+    "teachers": [
+      "GON"
+    ],
+    "rooms": [
+      "B 123"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "GE"
+    ],
+    "teachers": [
+      "GRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "BI/CH"
+    ],
+    "teachers": [
+      "HNR"
+    ],
+    "rooms": [
+      "A 032"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PH"
+    ],
+    "teachers": [
+      "MUL",
+      "QST"
+    ],
+    "rooms": [
+      "A 030"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "KU"
+    ],
+    "teachers": [
+      "KLK"
+    ],
+    "rooms": [
+      "E 115"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "MedGe"
+    ],
+    "teachers": [
+      "MUN"
+    ],
+    "rooms": [
+      "B 210"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "MedGe"
+    ],
+    "teachers": [
+      "KLK"
+    ],
+    "rooms": [
+      "B 209"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "IF Diff"
+    ],
+    "teachers": [
+      "KNI"
+    ],
+    "rooms": [
+      "B 211"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "IF Diff"
+    ],
+    "teachers": [
+      "NAR"
+    ],
+    "rooms": [
+      "B 212"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "F7"
+    ],
+    "teachers": [
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "F7"
+    ],
+    "teachers": [
+      "HOR"
+    ],
+    "rooms": [
+      "E 109"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "F7"
+    ],
+    "teachers": [
+      "PRI"
+    ],
+    "rooms": [
+      "A 201"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "L-För"
+    ],
+    "teachers": [
+      "HGO"
+    ],
+    "rooms": [
+      "C 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "L7"
+    ],
+    "teachers": [
+      "KOW"
+    ],
+    "rooms": [
+      "A 205"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "L7"
+    ],
+    "teachers": [
+      "MSL"
+    ],
+    "rooms": [
+      "B 124"
+    ],
+    "info": "cancelled"
+  }
+]

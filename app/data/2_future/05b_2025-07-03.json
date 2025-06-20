@@ -1,0 +1,73 @@
+[
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "SP"
+    ],
+    "teachers": [
+      "BRN"
+    ],
+    "rooms": [
+      "SH 3"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "BI"
+    ],
+    "teachers": [
+      "WRZ"
+    ],
+    "rooms": [
+      "A 033",
+      "A 105"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KU"
+    ],
+    "teachers": [
+      "KLK"
+    ],
+    "rooms": [
+      "E 115"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "WRZ"
+    ],
+    "rooms": [
+      "A 105"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "GKN"
+    ],
+    "rooms": [
+      "A 204"
+    ],
+    "info": ""
+  }
+]

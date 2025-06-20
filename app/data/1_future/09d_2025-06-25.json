@@ -1,0 +1,100 @@
+[
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "S8 Diff"
+    ],
+    "teachers": [
+      "BRN"
+    ],
+    "rooms": [
+      "B 123"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PH"
+    ],
+    "teachers": [
+      "MUL"
+    ],
+    "rooms": [
+      "A 030"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "ART"
+    ],
+    "rooms": [
+      "A 913"
+    ],
+    "info": ""
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "D-För"
+    ],
+    "teachers": [
+      "STC"
+    ],
+    "rooms": [
+      "B 117"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "A 913"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "MTM Einstieg"
+    ],
+    "teachers": [
+      "ART"
+    ],
+    "rooms": [
+      "PZ"
+    ],
+    "info": ""
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "E-För"
+    ],
+    "teachers": [
+      "QDF"
+    ],
+    "rooms": [
+      "A 207"
+    ],
+    "info": ""
+  }
+]

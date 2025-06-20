@@ -1,0 +1,62 @@
+[
+  {
+    "status": "ENTFÄLLT",
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "IST"
+    ],
+    "rooms": [
+      "E 018"
+    ],
+    "info": ""
+  },
+  {
+    "status": "ENTFÄLLT",
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "SMT"
+    ],
+    "rooms": [
+      "A 901"
+    ],
+    "info": ""
+  },
+  {
+    "status": "NEU",
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KU"
+    ],
+    "teachers": [
+      "BGM"
+    ],
+    "rooms": [
+      "E 015"
+    ],
+    "info": ""
+  },
+  {
+    "status": "NEU",
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "SMI"
+    ],
+    "rooms": [
+      "A 909"
+    ],
+    "info": ""
+  }
+]

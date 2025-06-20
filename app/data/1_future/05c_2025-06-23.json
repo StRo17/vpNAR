@@ -1,0 +1,256 @@
+[
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "SP"
+    ],
+    "teachers": [
+      "VGL"
+    ],
+    "rooms": [
+      "SH 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "BUR"
+    ],
+    "rooms": [
+      "B 111"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "FLO",
+      "VGL"
+    ],
+    "rooms": [
+      "B 122",
+      "B 111"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Schulgarten"
+    ],
+    "teachers": [
+      "COL"
+    ],
+    "rooms": [
+      "A 909"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Gesellschaftsspie"
+    ],
+    "teachers": [
+      "BUR"
+    ],
+    "rooms": [
+      "E 116"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Volleyball"
+    ],
+    "teachers": [
+      "R3"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "BHF"
+    ],
+    "rooms": [
+      "B 111"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Ballsport"
+    ],
+    "teachers": [
+      "TSA"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Theater"
+    ],
+    "teachers": [
+      "WNT"
+    ],
+    "rooms": [
+      "PZ"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Tischtennis"
+    ],
+    "teachers": [
+      "FEI"
+    ],
+    "rooms": [
+      "E 109"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Escape Rooms"
+    ],
+    "teachers": [
+      "HRM"
+    ],
+    "rooms": [
+      "A 105"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Escape Rooms"
+    ],
+    "teachers": [
+      "CHIV"
+    ],
+    "rooms": [
+      "A 102"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Bücherwürmer"
+    ],
+    "teachers": [
+      "REN"
+    ],
+    "rooms": [
+      "E 117"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Entspannen"
+    ],
+    "teachers": [
+      "GEB"
+    ],
+    "rooms": [
+      "C 106"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Spielen"
+    ],
+    "teachers": [
+      "BAL"
+    ],
+    "rooms": [
+      "C 102"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Kreativwerkstatt"
+    ],
+    "teachers": [
+      "ACI"
+    ],
+    "rooms": [
+      "C 103"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Europa"
+    ],
+    "teachers": [
+      "STC"
+    ],
+    "rooms": [
+      "B 111"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "AG Rheinflanke"
+    ],
+    "teachers": [
+      "STL"
+    ],
+    "rooms": [
+      "E 118"
+    ],
+    "info": ""
+  }
+]

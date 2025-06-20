@@ -1,0 +1,61 @@
+[
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "MUL"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "RGR",
+      "HZM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "ROET",
+      "DIE",
+      "TAK"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "SMZ"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  }
+]

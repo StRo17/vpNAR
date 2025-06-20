@@ -1,0 +1,282 @@
+[
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "AKS"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "ATZ"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "BRA"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "GKN"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "HOR"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "JAK"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "KOW"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "QUAD"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "SAL"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "UNG"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "KNI"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "LBS"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "RIF"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "WEI"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "MES"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "SMZ"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "HRM"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "RGR"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Bereit."
+    ],
+    "teachers": [
+      "DIE"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  }
+]

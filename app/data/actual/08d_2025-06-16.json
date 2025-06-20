@@ -1,0 +1,184 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "SP"
+    ],
+    "teachers": [
+      "MAU"
+    ],
+    "rooms": [
+      "SH 3"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "RGR"
+    ],
+    "rooms": [
+      "A 203"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "HZM"
+    ],
+    "rooms": [
+      "B 116"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "TSA"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "GEB"
+    ],
+    "rooms": [
+      "A 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PH"
+    ],
+    "teachers": [
+      "MUL"
+    ],
+    "rooms": [
+      "A 031"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "KU"
+    ],
+    "teachers": [
+      "KLK"
+    ],
+    "rooms": [
+      "E 115"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KR"
+    ],
+    "teachers": [
+      "HOR"
+    ],
+    "rooms": [
+      "B 223"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "KR"
+    ],
+    "teachers": [
+      "DTT"
+    ],
+    "rooms": [
+      "B 224"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "ER"
+    ],
+    "teachers": [
+      "MLB"
+    ],
+    "rooms": [
+      "B 124"
+    ],
+    "info": ""
+  },
+  {
+    "start": "15:15",
+    "end": "16:22",
+    "subjects": [
+      "M-För"
+    ],
+    "teachers": [
+      "MIC"
+    ],
+    "rooms": [
+      "B 116"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "QDF"
+    ],
+    "rooms": [
+      "A 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "IRU"
+    ],
+    "teachers": [
+      "ACI"
+    ],
+    "rooms": [
+      "C 101"
+    ],
+    "info": ""
+  }
+]

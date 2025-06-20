@@ -1,0 +1,72 @@
+[
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PK"
+    ],
+    "teachers": [
+      "BEN"
+    ],
+    "rooms": [
+      "C 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "PH"
+    ],
+    "teachers": [
+      "SUD"
+    ],
+    "rooms": [
+      "C 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "QUAD"
+    ],
+    "rooms": [
+      "C 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "ALW"
+    ],
+    "rooms": [
+      "C 101"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "LRS Förder"
+    ],
+    "teachers": [
+      "JAK"
+    ],
+    "rooms": [
+      "G 2"
+    ],
+    "info": ""
+  }
+]

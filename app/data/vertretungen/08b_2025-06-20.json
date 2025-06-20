@@ -1,0 +1,32 @@
+[
+  {
+    "status": "ENTFÄLLT",
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PK"
+    ],
+    "teachers": [
+      "STC"
+    ],
+    "rooms": [
+      "B 116"
+    ],
+    "info": ""
+  },
+  {
+    "status": "NEU",
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PK"
+    ],
+    "teachers": [
+      "QDF"
+    ],
+    "rooms": [
+      "B 116"
+    ],
+    "info": ""
+  }
+]

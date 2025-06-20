@@ -1,0 +1,143 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "ART",
+      "GRZ"
+    ],
+    "rooms": [
+      "C 105"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "SP"
+    ],
+    "teachers": [
+      "ENG"
+    ],
+    "rooms": [
+      "SH 2"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "MU"
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "B 008"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "TSA"
+    ],
+    "rooms": [
+      "G 3"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "SDT"
+    ],
+    "rooms": [
+      "A 103"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "PP"
+    ],
+    "teachers": [
+      "RGR"
+    ],
+    "rooms": [
+      "B 123"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "KR"
+    ],
+    "teachers": [
+      "MSK"
+    ],
+    "rooms": [
+      "B 224"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "ER"
+    ],
+    "teachers": [
+      "HOF"
+    ],
+    "rooms": [
+      "B 122"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "E"
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "A 913"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "IRU"
+    ],
+    "teachers": [
+      "ALW"
+    ],
+    "rooms": [
+      "E 109"
+    ],
+    "info": "cancelled"
+  }
+]

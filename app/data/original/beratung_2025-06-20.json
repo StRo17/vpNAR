@@ -1,0 +1,30 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "LB"
+    ],
+    "teachers": [
+      "MAU"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Beratung"
+    ],
+    "teachers": [
+      "QUAD"
+    ],
+    "rooms": [
+      "Unbekannt"
+    ],
+    "info": ""
+  }
+]

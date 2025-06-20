@@ -1,0 +1,32 @@
+[
+  {
+    "status": "ENTFÄLLT",
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "MTM Einstieg"
+    ],
+    "teachers": [
+      "MAU"
+    ],
+    "rooms": [
+      "PZ"
+    ],
+    "info": ""
+  },
+  {
+    "status": "NEU",
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "MTM Einstieg"
+    ],
+    "teachers": [
+      "TAK"
+    ],
+    "rooms": [
+      "PZ"
+    ],
+    "info": ""
+  }
+]

@@ -1,0 +1,6 @@
+# Ignoriere Python-venv im Context
+app/venv
+# Logs im Build-Context brauchen wir nicht
+app/logs
+# Git-Ignorier-Regeln übernehmen
+.gitignore

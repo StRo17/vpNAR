@@ -1,0 +1,145 @@
+[
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "Unbekannt"
+    ],
+    "teachers": [
+      "LAE"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": "irregular"
+  },
+  {
+    "start": "08:00",
+    "end": "09:07",
+    "subjects": [
+      "M"
+    ],
+    "teachers": [
+      "LAE"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "10:50",
+    "end": "11:57",
+    "subjects": [
+      "D"
+    ],
+    "teachers": [
+      "REN",
+      "STC"
+    ],
+    "rooms": [
+      "G 2",
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Schw.Begl."
+    ],
+    "teachers": [
+      "ENG"
+    ],
+    "rooms": [
+      "PS 5"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "09:15",
+    "end": "10:22",
+    "subjects": [
+      "LZ"
+    ],
+    "teachers": [
+      "ZDN",
+      "REN"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": ""
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "D-För"
+    ],
+    "teachers": [
+      "AMO"
+    ],
+    "rooms": [
+      "E 005"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "D-För"
+    ],
+    "teachers": [
+      "PFE"
+    ],
+    "rooms": [
+      "A 102"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "E-För"
+    ],
+    "teachers": [
+      "GRZ"
+    ],
+    "rooms": [
+      "G 4"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "12:05",
+    "end": "13:12",
+    "subjects": [
+      "Schw"
+    ],
+    "teachers": [
+      "TAK"
+    ],
+    "rooms": [
+      "SwH"
+    ],
+    "info": "cancelled"
+  },
+  {
+    "start": "14:00",
+    "end": "15:07",
+    "subjects": [
+      "LRS Förder"
+    ],
+    "teachers": [
+      "REN"
+    ],
+    "rooms": [
+      "G 1"
+    ],
+    "info": "cancelled"
+  }
+]
