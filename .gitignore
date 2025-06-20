@@ -1,0 +1,17 @@
+# Virtuelle Umgebungen
+venv/
+
+# Environment-Files
+.env
+app/config.env
+
+# Log-Ordner
+app/logs/
+
+# Python-Cache & Editor-Temp
+__pycache__/
+*.pyc
+*.swp
+
+# VSCode-Settings
+.vscode/
