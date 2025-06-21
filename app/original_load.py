@@ -1,68 +1,71 @@
 #!/usr/bin/env python3
 """
-Lädt Pläne für <heute + OFFSET_DAYS> (Default 49) für alle Klassen
-und legt sie unter ./data/3_future/<klasse>_<yyyy-mm-dd>.json ab.
+Lädt den Original-Plan für heute+OFFSET_DAYS und speichert in data/original/.
 """
-import os, json, logging
+import json, logging, sys
 from datetime import datetime, timedelta
-import webuntis
+from pathlib import Path
 from dotenv import load_dotenv
+import webuntis
 
-load_dotenv("config.env")
+# ─── Basispfad & Env ─────────────────────────────────────────────────────────
+BASEDIR = Path(__file__).parent
+load_dotenv(dotenv_path=BASEDIR.parent / ".env")
 
-SERVER      = os.getenv("WEBUNTIS_SERVER")
-USERNAME    = os.getenv("WEBUNTIS_USER")
-PASSWORD    = os.getenv("WEBUNTIS_PASSWORD")
-SCHOOL      = os.getenv("WEBUNTIS_SCHOOL")
-USERAGENT   = "OrigLoadBot"
+SERVER    = sys.getenv("WEBUNTIS_SERVER")
+USERNAME  = sys.getenv("WEBUNTIS_USER")
+PASSWORD  = sys.getenv("WEBUNTIS_PASSWORD")
+SCHOOL    = sys.getenv("WEBUNTIS_SCHOOL")
+DAYS      = int(sys.getenv("OFFSET_DAYS", "35"))
 
-OFFSET_DAYS = int(os.getenv("OFFSET_DAYS", "21"))   # z. B. 21 / 28 … / 49
-TARGET_DIR  = "./data/3_future"
+# ─── Zielverzeichnis ─────────────────────────────────────────────────────────
+TARGET_DIR = BASEDIR / "data" / "original"
+TARGET_DIR.mkdir(parents=True, exist_ok=True)
 
-os.makedirs(TARGET_DIR, exist_ok=True)
-logging.basicConfig(level=logging.INFO,
-                    format="[%(asctime)s] %(message)s",
-                    datefmt="%Y-%m-%d %H:%M:%S")
+# ─── Logging ─────────────────────────────────────────────────────────────────
+logging.basicConfig(
+    level=logging.INFO,
+    format="[%(asctime)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+
+def login():
+    session = webuntis.Session(
+        server=SERVER, username=USERNAME,
+        password=PASSWORD, school=SCHOOL,
+        useragent="OrigLoadBot/1.0"
+    )
+    session.login()
+    logging.info("✔ WebUntis Login erfolgreich")
+    return session
 
 def extract_list(obj_list):
-    if obj_list:
-        names = [getattr(o, "name", None) for o in obj_list]
-        names = [n for n in names if n]
-        if names:
-            return names
-    return ["Unbekannt"]
+    names = [getattr(o, "name", None) for o in (obj_list or [])]
+    return [n for n in names if n] or ["Unbekannt"]
 
 def main():
-    target_date = datetime.now() + timedelta(days=OFFSET_DAYS)
-    ds = target_date.strftime("%Y-%m-%d")
-
-    with webuntis.Session(server=SERVER,
-                          username=USERNAME,
-                          password=PASSWORD,
-                          school=SCHOOL,
-                          useragent=USERAGENT).login() as s:
-
-        for k in s.klassen():
-            fname = f"{k.name.lower().replace(' ', '')}_{ds}.json"
-            fpath = os.path.join(TARGET_DIR, fname)
-
-            try:
-                table = s.timetable(klasse=k, start=target_date, end=target_date)
-                data  = []
+    target = datetime.now() + timedelta(days=DAYS)
+    ds = target.date().isoformat()
+    try:
+        with login() as session:
+            for klass in session.klassen():
+                table = session.timetable(klasse=klass, start=target, end=target)
+                out = []
                 for p in table:
-                    data.append({
+                    out.append({
                         "start":    p.start.strftime("%H:%M"),
                         "end":      p.end.strftime("%H:%M"),
-                        "subjects": extract_list(getattr(p,"subjects",[])),
-                        "teachers": extract_list(getattr(p,"teachers",[])),
-                        "rooms":    extract_list(getattr(p,"rooms",[])),
-                        "info":     getattr(p,"code",None) or getattr(p,"info",None)
+                        "subjects": extract_list(getattr(p, "subjects", [])),
+                        "teachers": extract_list(getattr(p, "teachers", [])),
+                        "rooms":    extract_list(getattr(p, "rooms", [])),
+                        "info":     getattr(p, "code", None) or getattr(p, "info", None),
                     })
-                with open(fpath,"w",encoding="utf-8") as f:
-                    json.dump(data,f,ensure_ascii=False,indent=2)
-                logging.info("✔ %s", fname)
-            except Exception as e:
-                logging.error("⚠ %s – %s", k.name, e)
+                fn = f"{klass.name.lower().replace(' ', '')}_{ds}.json"
+                fp = TARGET_DIR / fn
+                fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+                logging.info(f"✔ {fn}")
+    except Exception as e:
+        logging.error(f"Fehler: {e}")
 
 if __name__ == "__main__":
     main()

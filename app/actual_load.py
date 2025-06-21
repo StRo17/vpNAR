@@ -1,111 +1,78 @@
 #!/usr/bin/env python3
 """
-Lädt den heutigen Stundenplan jeder Klasse aus WebUntis
-und legt ihn unter ./data/actual/<klasse>_<yyyy-mm-dd>.json ab.
-
-Auf dem Raspberry Pi wird dieses Skript per cron (oder systemd-Timer) alle
-3 Minuten gestartet – deshalb KEINE Endlosschleife hier.
+Lädt den Stundenplan von heute aus WebUntis und speichert ihn unter
+data/actual/<klasse>_<YYYY-MM-DD>.json ab.
 """
-import os
-import json
-import logging
+import json, logging, sys
 from datetime import date
-
-import webuntis
+from pathlib import Path
 from dotenv import load_dotenv
+import webuntis
 
-# ──────────────────────────────────────────────────────
-# 1.  ENV-Variablen laden
-# ──────────────────────────────────────────────────────
-load_dotenv("config.env")
+# ─── Basispfad & Env ─────────────────────────────────────────────────────────
+BASEDIR = Path(__file__).parent
+load_dotenv(dotenv_path=BASEDIR.parent / ".env")
 
-SERVER   = os.getenv("WEBUNTIS_SERVER")
-USERNAME = os.getenv("WEBUNTIS_USER")
-PASSWORD = os.getenv("WEBUNTIS_PASSWORD")
-SCHOOL   = os.getenv("WEBUNTIS_SCHOOL")
-USERAGENT = "WebUntisClient/1.0"
+SERVER    = sys.getenv("WEBUNTIS_SERVER")
+USERNAME  = sys.getenv("WEBUNTIS_USER")
+PASSWORD  = sys.getenv("WEBUNTIS_PASSWORD")
+SCHOOL    = sys.getenv("WEBUNTIS_SCHOOL")
 
-TARGET_DIR = "./data/actual"
-os.makedirs(TARGET_DIR, exist_ok=True)
+# ─── Zielverzeichnis ─────────────────────────────────────────────────────────
+TARGET_DIR = BASEDIR / "data" / "actual"
+TARGET_DIR.mkdir(parents=True, exist_ok=True)
 
+# ─── Logging ─────────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 
-# ──────────────────────────────────────────────────────
-# 2.  Hilfsfunktionen
-# ──────────────────────────────────────────────────────
 def login():
     session = webuntis.Session(
         server=SERVER,
         username=USERNAME,
         password=PASSWORD,
         school=SCHOOL,
-        useragent=USERAGENT,
+        useragent="ActualLoadBot/1.0"
     )
     session.login()
-    logging.info("Login erfolgreich.")
+    logging.info("✔ WebUntis Login erfolgreich")
     return session
 
-
 def extract_list(obj_list):
-    """Gibt eine Liste gültiger Namen oder ['Unbekannt'] zurück."""
-    if obj_list:
-        names = [getattr(o, "name", None) for o in obj_list]
-        names = [n for n in names if n]        # nur nicht-leere
-        if names:
-            return names
-    return ["Unbekannt"]
+    names = [getattr(o, "name", None) for o in (obj_list or [])]
+    return [n for n in names if n] or ["Unbekannt"]
 
-
-def save_timetable_as_json(session, klasse, datum):
-    table = session.timetable(klasse=klasse, start=datum, end=datum)
+def save_timetable(session, klass, dt):
+    table = session.timetable(klasse=klass, start=dt, end=dt)
     if not table:
-        logging.warning(f"Keine Einträge für {klasse.name} am {datum}.")
+        logging.warning(f"Keine Einträge für {klass.name} am {dt}")
         return
+    out = []
+    for p in table:
+        out.append({
+            "start":    p.start.strftime("%H:%M"),
+            "end":      p.end.strftime("%H:%M"),
+            "subjects": extract_list(getattr(p, "subjects", [])),
+            "teachers": extract_list(getattr(p, "teachers", [])),
+            "rooms":    extract_list(getattr(p, "rooms", [])),
+            "info":     getattr(p, "code", None) or getattr(p, "info", None),
+        })
+    fn = f"{klass.name.lower().replace(' ', '')}_{dt.isoformat()}.json"
+    fp = TARGET_DIR / fn
+    fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    logging.info(f"✔ Gespeichert: {fp}")
 
-    data = []
-    for period in table:
-        try:
-            data.append(
-                {
-                    "start": period.start.strftime("%H:%M"),
-                    "end": period.end.strftime("%H:%M"),
-                    "subjects": extract_list(getattr(period, "subjects", [])),
-                    "teachers": extract_list(getattr(period, "teachers", [])),
-                    "rooms": extract_list(getattr(period, "rooms", [])),
-                    "info": getattr(period, "code", None)
-                    or getattr(period, "info", None),
-                }
-            )
-        except Exception as pe:
-            logging.error(f"{klasse.name}: Fehler in Periode – {pe}")
-
-    filename = (
-        f"{klasse.name.lower().replace(' ', '')}_{datum}.json"
-    )
-    filepath = os.path.join(TARGET_DIR, filename)
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-    logging.info(f"✔ Gespeichert: {filepath}")
-
-
-# ──────────────────────────────────────────────────────
-# 3.  Hauptlogik (einmaliger Lauf)
-# ──────────────────────────────────────────────────────
 def main():
-    datum_heute = date.today()
+    heute = date.today()
     try:
-        session = login()
-        for klasse in session.klassen():
-            save_timetable_as_json(session, klasse, datum_heute)
-        session.logout()
+        with login() as session:
+            for klass in session.klassen():
+                save_timetable(session, klass, heute)
     except Exception as e:
-        logging.error(f"Abbruch: {e}")
-
+        logging.error(f"Fehler: {e}")
 
 if __name__ == "__main__":
     main()

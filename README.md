@@ -1,25 +1,27 @@
 # Vertretungsplan + TV-Keeper
 
-Dieses Repository enthält zwei Docker-Services:
+Dieses Repository enthält zwei Dockerized-Services:
 
 1. **vertretungen_app**  
-   - Stellt Vertretungspläne via Flask auf Ports 5000 (Schüler) & 5001 (Lehrer) bereit.  
-   - Lädt alle 7–8 Min. die aktuellen Daten neu, führt Cron-Jobs aus.  
-   - **Healthcheck**: HTTP-GET auf `http://localhost:5000/`.
+   - Flask-Webservice für Schüler- & Lehrer-Vertretungspläne  
+   - Lädt via WebUntis-API aktuelle und zukünftige Stundenpläne  
+   - Cron-Jobs für regelmäßige Updates  
+   - Banner-Anzeige per JSON-Config
 
 2. **tv-keeper**  
-   - Hält per CEC-Script einen an HDMI angeschlossenen TV wach.  
-   - Läuft privilegiert auf dem Raspberry Pi (Device `/dev/vchiq`).  
-   - **Healthcheck**: Check, ob `keep-tv-on.sh`-Prozess aktiv ist.
+   - Hält per HDMI-CEC den TV wach  
+   - Läuft als Side-Car und stellt sicher, dass der Bildschirm nicht in Standby geht
 
----
+## Voraussetzungen
 
-## Starten
-```bash
-docker-compose up --build -d
+- Docker & Docker Compose  
+- Raspberry Pi mit `/dev/vchiq` für CEC-Zugriff
 
-## Restart
-```bash
-docker-compose down
-docker-compose build --no-cache
-docker-compose up -d
+## Installation
+
+1. Kopiere `.env.example` zu `.env` und fülle die WebUntis-Zugangsdaten aus.
+2. Erstelle `banner_config.json` mit gewünschtem Banner-Text/Modus.
+3. Starte alle Services:
+
+   ```bash
+   docker-compose up --build -d

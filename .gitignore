@@ -1,20 +1,20 @@
 # Virtuelle Umgebungen
 venv/
+app/venv/
 
-# Environment-Files
+# Environment-Files mit Secrets
 .env
 app/config.env
 
-# Log-Ordner
+# Logs & Daten (werden extern gemountet)
 app/logs/
+app/data/
 
-# Python-Cache & Editor-Temp
+# Python Cache & Temp
 __pycache__/
 *.pyc
 *.swp
 
-# VSCode-Settings
+# IDE & Git selbst
 .vscode/
-
-# Vertretungsdaten
-app/data/
+.git/

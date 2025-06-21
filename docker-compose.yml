@@ -1,27 +1,6 @@
 version: '3.8'
-services:
-  app:
-    image: vertretungen_app:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file:
-      - ./app/config.env
-    volumes:
-      - ./app:/app                                        # Quellcode mounten
-      - ./app/data:/app/data
-      - ./app/logs:/app/logs
-      - ./app/banner_config.json:/app/banner_config.json
-    ports:
-      - "5000:5000"   # Schüler
-      - "5001:5001"   # Lehrer
-      - "5003:5003"   # Stundenplan-Rotator
-      - "5010:5010"   # Banner
-    depends_on:
-      - tv-keeper
-    restart: unless-stopped
-    command: ["/app/start_all.sh"]
 
+services:
   tv-keeper:
     image: tv-keeper:latest
     build:
@@ -31,3 +10,35 @@ services:
     devices:
       - /dev/vchiq:/dev/vchiq
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'on 0' | cec-client -s -d 1"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+  app:
+    image: vertretungen_app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    volumes:
+      - ./app:/app
+      - ./app/data:/app/data
+      - ./app/logs:/app/logs
+      - ./app/banner_config.json:/app/banner_config.json
+    ports:
+      - "5000:5000"  # Schüler
+      - "5001:5001"  # Lehrer
+      - "5003:5003"  # Stundenplan-Rotator
+      - "5010:5010"  # Banner
+    depends_on:
+      - tv-keeper
+    command: ["/app/start_all.sh"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,6 +1,17 @@
-# Ignoriere Python-venv im Context
-app/venv
-# Logs im Build-Context brauchen wir nicht
-app/logs
-# Git-Ignorier-Regeln übernehmen
-.gitignore
+# ─ Python Cache & Venv
+**/__pycache__/
+**/*.pyc
+venv/
+app/venv/
+
+# ─ Gemountete Logs & Daten
+app/logs/
+app/data/
+
+# ─ Secrets / Env
+.env
+app/config.env
+
+# ─ IDE & Git
+.git
+.vscode/
