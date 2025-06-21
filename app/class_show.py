@@ -36,7 +36,7 @@ def load_all_data():
     return new_data
 
 # ──────────────────────────────────────────────────────────────────────────────
-# 2) Dein originales HTML-Template
+# 2) Originales HTML-Template
 # ──────────────────────────────────────────────────────────────────────────────
 html_template = """
 <!DOCTYPE html>
@@ -128,7 +128,7 @@ html_template = """
 """
 
 # ──────────────────────────────────────────────────────────────────────────────
-# 3) Helfer zum Gruppieren der Klassen wie in deinem Beispiel
+# 3) Helfer zum Gruppieren der Klassen
 # ──────────────────────────────────────────────────────────────────────────────
 def get_class_groups(data):
     groups = {
