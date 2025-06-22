@@ -54,6 +54,7 @@ def load_banner_json():
     except Exception:
         return {"mode": "none", "text": ""}
 
+
 @app_student.route("/")
 def student_view():
     with data_lock:
@@ -66,6 +67,7 @@ def student_view():
         banner=banner,
         today=date.today().isoformat()
     )
+
 
 @app_teacher.route("/")
 def teacher_view():
@@ -91,6 +93,7 @@ def teacher_view():
         banner=banner,
         today=date.today().isoformat()
     )
+
 
 if __name__ == "__main__":
     from threading import Thread
