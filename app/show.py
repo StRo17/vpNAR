@@ -110,8 +110,8 @@ student_template = """
     color: #666;
     margin-top: 1em;
   }
-  .footer-spacer { 
-    height: 10vh; 
+  .footer-spacer {
+    height: 10vh;
   }
 </style>
 </head><body>
@@ -264,6 +264,7 @@ teacher_template = """
 </body></html>
 """
 
+
 @app_student.route('/')
 def student_view():
     with data_lock:
@@ -277,6 +278,7 @@ def student_view():
         banner=banner,
         today=date.today().isoformat()
     )
+
 
 @app_teacher.route('/')
 def teacher_view():
@@ -303,6 +305,7 @@ def teacher_view():
         banner=banner,
         today=date.today().isoformat()
     )
+
 
 if __name__ == '__main__':
     from threading import Thread
