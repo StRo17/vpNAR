@@ -49,6 +49,7 @@ def data_reload_loop():
 
 threading.Thread(target=data_reload_loop, daemon=True).start()
 
+
 def load_banner_json():
     path = os.path.join(os.path.dirname(__file__), "banner_config.json")
     try:
@@ -56,7 +57,6 @@ def load_banner_json():
             return json.load(f)
     except Exception:
         return {"mode": "none", "text": ""}
-
 
 
 @app_student.route("/")
