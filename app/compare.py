@@ -4,7 +4,6 @@ Vergleicht ./data/actual/*_<yyyy-mm-dd>.json mit
 ./data/original/*_<yyyy-mm-dd>.json und schreibt Änderungen nach
 ./data/vertretungen/*_<yyyy-mm-dd>.json
 """
-import os
 import json
 import logging
 from pathlib import Path
