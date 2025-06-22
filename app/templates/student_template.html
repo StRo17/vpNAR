@@ -1,0 +1,100 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="60">
+<title>Schüler-Vertretungen</title>
+<style>
+  body { margin:0; font-family:sans-serif; }
+  #table-container {
+    height: calc(100vh - 10vh);
+    overflow-y: auto;
+    padding: 10px;
+    padding-bottom: 20vh;
+  }
+  table {
+    width: 95%;
+    border-collapse: collapse;
+    font-size: 1.5vw;
+    margin: 0 auto;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background: #0066CC;
+    color: #fff;
+  }
+  #banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    border-top: 1px solid #444;
+    padding: 8px;
+    background: #e0e0e0;
+    font-size: 8vh;
+    line-height: 10vh;
+    text-align: center;
+    color: red;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .signature {
+    text-align: right;
+    font-size: 1vw;
+    color: #666;
+    margin-top: 1em;
+  }
+  .footer-spacer {
+    height: 10vh;
+  }
+</style>
+</head><body>
+  <div id="table-container">
+    <h2>Vertretungen am {{ today }}</h2>
+    <table>
+      <tr><th>Klasse</th><th>Stunde</th><th>Raum</th><th>Fach</th><th>Lehrer</th></tr>
+      {% for kl, periods in data.items() %}
+        {% for p in periods %}
+        <tr>
+          <td>{{ kl }}</td>
+          <td>{{ p.start }}–{{ p.end }}</td>
+          <td>{{ p.rooms|join(", ") }}</td>
+          <td>{{ p.subjects|join(", ") }}</td>
+          <td>{{ p.teachers|join(", ") }}</td>
+        </tr>
+        {% endfor %}
+      {% endfor %}
+    </table>
+    <div class="signature">@Nargang</div>
+    <div class="footer-spacer"></div>
+  </div>
+
+  <div id="banner">
+    {% if banner.mode=='text' %}{{ banner.text }}{% endif %}
+  </div>
+
+  <script>
+    const speed = 50;
+    const step = 1;
+    const pause = 2000;
+    const container = document.getElementById('table-container');
+    let scrolling = true;
+
+    function scrollStep() {
+      if (!scrolling) return;
+      container.scrollBy(0, step);
+      if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+        scrolling = false;
+        setTimeout(() => {
+          container.scrollTo({ top: 0, behavior: 'smooth' });
+          setTimeout(() => scrolling = true, 500);
+        }, pause);
+      }
+    }
+
+    setInterval(scrollStep, speed);
+  </script>
+</body></html>

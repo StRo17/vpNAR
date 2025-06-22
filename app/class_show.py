@@ -5,35 +5,39 @@ from flask import Flask, render_template_string, request
 
 app = Flask(__name__)
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 1) Funktion zum Laden aller aktuellen Plandaten
 # ──────────────────────────────────────────────────────────────────────────────
 def load_all_data():
-    directory = os.path.join(os.path.dirname(__file__), 'data', 'actual')
+    directory = os.path.join(os.path.dirname(__file__), "data", "actual")
     if not os.path.isdir(directory):
         return {}
-    files = [f for f in os.listdir(directory) if f.endswith('.json')]
+    files = [f for f in os.listdir(directory) if f.endswith(".json")]
 
     new_data = {}
     for file in files:
         file_path = os.path.join(directory, file)
         try:
-            raw = json.load(open(file_path, 'r', encoding='utf-8'))
+            raw = json.load(open(file_path, "r", encoding="utf-8"))
         except Exception as e:
             print(f"Error loading {file_path}: {e}")
             raw = []
 
-        class_name = file.split('_', 1)[0]
+        class_name = file.split("_", 1)[0]
         new_data[class_name] = []
         for entry in raw:
-            new_data[class_name].append({
-                'Start':   entry.get('start', ''),
-                'End':     entry.get('end',   ''),
-                'Subject': entry.get('subjects', [''])[0],
-                'Room':    entry.get('rooms',    [''])[0],
-                'Teacher': entry.get('teachers', [''])[0]
-            })
+            new_data[class_name].append(
+                {
+                    "Start": entry.get("start", ""),
+                    "End": entry.get("end", ""),
+                    "Subject": entry.get("subjects", [""])[0],
+                    "Room": entry.get("rooms", [""])[0],
+                    "Teacher": entry.get("teachers", [""])[0],
+                }
+            )
     return new_data
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 2) Originales HTML-Template
@@ -127,13 +131,22 @@ html_template = """
 </html>
 """
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 3) Helfer zum Gruppieren der Klassen
 # ──────────────────────────────────────────────────────────────────────────────
 def get_class_groups(data):
     groups = {
-        "5": [], "6": [], "7": [], "8": [], "9": [], "10": [],
-        "IFS": [], "EF": [], "Q1": [], "Q2": []
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": [],
+        "IFS": [],
+        "EF": [],
+        "Q1": [],
+        "Q2": [],
     }
     for class_name in data.keys():
         if class_name.startswith("05"):
@@ -159,10 +172,11 @@ def get_class_groups(data):
     # Entferne leere Gruppen
     return {k: v for k, v in groups.items() if v}
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 4) Haupt-Route
 # ──────────────────────────────────────────────────────────────────────────────
-@app.route('/')
+@app.route("/")
 def show_timetable():
     # 1) Daten frisch laden
     class_data = load_all_data()
@@ -178,11 +192,13 @@ def show_timetable():
 
     # 3) Header-Spalten (Klassen) und Zeitslots
     class_names = groups[group]
-    time_slots = sorted({
-        f"{e['Start']} - {e['End']}"
-        for periods in class_data.values()
-        for e in periods
-    })
+    time_slots = sorted(
+        {
+            f"{e['Start']} - {e['End']}"
+            for periods in class_data.values()
+            for e in periods
+        }
+    )
 
     # 4) Rendern
     return render_template_string(
@@ -191,9 +207,10 @@ def show_timetable():
         class_names=class_names,
         time_slots=time_slots,
         current_group=group,
-        groups=json.dumps(group_keys)
+        groups=json.dumps(group_keys),
     )
 
+
 # ──────────────────────────────────────────────────────────────────────────────
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5003, debug=False)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5003, debug=False)

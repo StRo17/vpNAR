@@ -25,3 +25,12 @@ Dieses Repository enthält zwei Dockerized-Services:
 
    ```bash
    docker-compose up --build -d
+
+
+# MINT-Akademie – Vertretungsplan
+
+## 🚀 Projektstart
+
+```bash
+cp .env.example .env
+docker-compose up -d --build
