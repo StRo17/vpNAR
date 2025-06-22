@@ -8,9 +8,7 @@ from datetime import date
 from flask import Flask, render_template_string
 
 logging.basicConfig(
-    level=logging.INFO,
-    format="[%(asctime)s] %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
+    level=logging.INFO, format="[%(asctime)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
 )
 
 app_student = Flask("student_app")
@@ -19,9 +17,10 @@ app_teacher = Flask("teacher_app")
 data_lock = threading.Lock()
 sub_data = {}
 
+
 def load_substitution_data():
     """Lädt alle Vertretungen für heute aus data/vertretungen."""
-    base = os.path.join(os.path.dirname(__file__), 'data', 'vertretungen')
+    base = os.path.join(os.path.dirname(__file__), "data", "vertretungen")
     today = date.today().strftime("%Y-%m-%d")
     result = {}
     if not os.path.isdir(base):
@@ -32,12 +31,13 @@ def load_substitution_data():
             kl = fn.split("_")[0]
             path = os.path.join(base, fn)
             try:
-                with open(path, encoding='utf-8') as f:
+                with open(path, encoding="utf-8") as f:
                     result[kl] = json.load(f)
             except Exception as e:
                 logging.error("Fehler beim Laden %s: %s", fn, e)
                 result[kl] = []
     return result
+
 
 def data_reload_loop():
     """Hintergrundthread: alle 7.15 Min. Vertretungen neu laden."""
@@ -49,16 +49,19 @@ def data_reload_loop():
             sub_data.update(new)
         time.sleep(60)
 
+
 threading.Thread(target=data_reload_loop, daemon=True).start()
+
 
 def load_banner_json():
     """Lädt banner_config.json bei jedem Request frisch ein."""
-    path = os.path.join(os.path.dirname(__file__), 'banner_config.json')
+    path = os.path.join(os.path.dirname(__file__), "banner_config.json")
     try:
-        with open(path, encoding='utf-8') as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     except Exception:
-        return {'mode':'none','text':''}
+        return {"mode": "none", "text": ""}
+
 
 student_template = """
 <!doctype html>
@@ -213,8 +216,8 @@ teacher_template = """
     color: #666;
     margin-top: 1em;
   }
-  .footer-spacer { 
-    height: 10vh; 
+  .footer-spacer {
+    height: 10vh;
   }
 </style>
 </head><body>
@@ -264,7 +267,8 @@ teacher_template = """
 </body></html>
 """
 
-@app_student.route('/')
+
+@app_student.route("/")
 def student_view():
     with data_lock:
         raw = dict(sub_data)
@@ -272,13 +276,11 @@ def student_view():
     data = {kl: raw[kl] for kl in sorted(raw)}
     banner = load_banner_json()
     return render_template_string(
-        student_template,
-        data=data,
-        banner=banner,
-        today=date.today().isoformat()
+        student_template, data=data, banner=banner, today=date.today().isoformat()
     )
 
-@app_teacher.route('/')
+
+@app_teacher.route("/")
 def teacher_view():
     with data_lock:
         raw = dict(sub_data)
@@ -286,28 +288,29 @@ def teacher_view():
     rows = []
     for kl, periods in raw.items():
         for p in periods:
-            for teacher in p.get('teachers', []):
-                rows.append({
-                    'teacher': teacher,
-                    'start': p.get('start', ''),
-                    'end': p.get('end', ''),
-                    'rooms': p.get('rooms', []),
-                    'subjects': p.get('subjects', []),
-                    'klasse': kl
-                })
-    rows.sort(key=lambda r: r['teacher'])
+            for teacher in p.get("teachers", []):
+                rows.append(
+                    {
+                        "teacher": teacher,
+                        "start": p.get("start", ""),
+                        "end": p.get("end", ""),
+                        "rooms": p.get("rooms", []),
+                        "subjects": p.get("subjects", []),
+                        "klasse": kl,
+                    }
+                )
+    rows.sort(key=lambda r: r["teacher"])
     banner = load_banner_json()
     return render_template_string(
-        teacher_template,
-        rows=rows,
-        banner=banner,
-        today=date.today().isoformat()
+        teacher_template, rows=rows, banner=banner, today=date.today().isoformat()
     )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     from threading import Thread
-    t1 = Thread(target=lambda: app_student.run(host='0.0.0.0', port=5000))
-    t2 = Thread(target=lambda: app_teacher.run(host='0.0.0.0', port=5001))
+
+    t1 = Thread(target=lambda: app_student.run(host="0.0.0.0", port=5000))
+    t2 = Thread(target=lambda: app_teacher.run(host="0.0.0.0", port=5001))
     t1.start()
     t2.start()
     t1.join()
