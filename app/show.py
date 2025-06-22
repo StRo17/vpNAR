@@ -16,6 +16,7 @@ app_teacher = Flask("teacher_app", template_folder="templates")
 data_lock = threading.Lock()
 sub_data = {}
 
+
 def load_substitution_data():
     base = os.path.join(os.path.dirname(__file__), "data", "vertretungen")
     today = date.today().strftime("%Y-%m-%d")
@@ -35,6 +36,7 @@ def load_substitution_data():
                 result[kl] = []
     return result
 
+
 def data_reload_loop():
     while True:
         logging.info("Reload Vertretungen …")
@@ -43,6 +45,7 @@ def data_reload_loop():
             sub_data.clear()
             sub_data.update(new)
         time.sleep(60)
+
 
 threading.Thread(target=data_reload_loop, daemon=True).start()
 
@@ -53,6 +56,7 @@ def load_banner_json():
             return json.load(f)
     except Exception:
         return {"mode": "none", "text": ""}
+
 
 
 @app_student.route("/")
