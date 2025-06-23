@@ -5,6 +5,7 @@ Lädt den Original-Plan für heute+OFFSET_DAYS und speichert in data/original/.
 import json
 import logging
 import sys
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 from dotenv import load_dotenv
@@ -14,11 +15,11 @@ import webuntis
 BASEDIR = Path(__file__).parent
 load_dotenv(dotenv_path=BASEDIR.parent / ".env")
 
-SERVER = sys.getenv("WEBUNTIS_SERVER")
-USERNAME = sys.getenv("WEBUNTIS_USER")
-PASSWORD = sys.getenv("WEBUNTIS_PASSWORD")
-SCHOOL = sys.getenv("WEBUNTIS_SCHOOL")
-DAYS = int(sys.getenv("OFFSET_DAYS", "35"))
+SERVER = os.getenv("WEBUNTIS_SERVER")
+USERNAME = os.getenv("WEBUNTIS_USER")
+PASSWORD = os.getenv("WEBUNTIS_PASSWORD")
+SCHOOL = os.getenv("WEBUNTIS_SCHOOL")
+DAYS = int(os.getenv("OFFSET_DAYS", "35"))
 
 # ─── Zielverzeichnis ─────────────────────────────────────────────────────────
 TARGET_DIR = BASEDIR / "data" / "original"
