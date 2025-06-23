@@ -6,6 +6,7 @@ data/actual/<klasse>_<YYYY-MM-DD>.json ab.
 import json
 import logging
 import sys
+import os
 from datetime import date
 from pathlib import Path
 from dotenv import load_dotenv
@@ -15,10 +16,10 @@ import webuntis
 BASEDIR = Path(__file__).parent
 load_dotenv(dotenv_path=BASEDIR.parent / ".env")
 
-SERVER = sys.getenv("WEBUNTIS_SERVER")
-USERNAME = sys.getenv("WEBUNTIS_USER")
-PASSWORD = sys.getenv("WEBUNTIS_PASSWORD")
-SCHOOL = sys.getenv("WEBUNTIS_SCHOOL")
+SERVER = os.getenv("WEBUNTIS_SERVER")
+USERNAME = os.getenv("WEBUNTIS_USER")
+PASSWORD = os.getenv("WEBUNTIS_PASSWORD")
+SCHOOL = os.getenv("WEBUNTIS_SCHOOL")
 
 # ─── Zielverzeichnis ─────────────────────────────────────────────────────────
 TARGET_DIR = BASEDIR / "data" / "actual"
