@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
-import os
-import json
 import logging
-from datetime import date
 from flask import Flask, jsonify
-from utils import load_substitution_data, load_banner_json, HTML_REFRESH
-
+from utils import load_substitution_data, load_banner_json
+# app/show.py
 # Flask application
 app = Flask(__name__, template_folder="templates")
 

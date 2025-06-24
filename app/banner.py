@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os
+import json
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import config
 

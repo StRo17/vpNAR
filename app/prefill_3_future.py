@@ -6,10 +6,10 @@ und speichert sie in data/3_future/<klasse>_<YYYY-MM-DD>.json.
 import json
 import logging
 import os
-from datetime import date, timedelta
 from pathlib import Path
 from dotenv import load_dotenv
 import webuntis
+from datetime import date, timedelta
 
 # ─── Basispfad & Env ─────────────────────────────────────────────────────────
 BASEDIR = Path(__file__).parent

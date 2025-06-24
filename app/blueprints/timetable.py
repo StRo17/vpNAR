@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request
 from class_show import load_all_data, get_groups
-
 bp = Blueprint("timetable", __name__, url_prefix="/timetable", template_folder="../templates")
 
 

@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template
 from datetime import date
 from utils import load_substitution_data, load_banner_json, HTML_REFRESH
-
 bp = Blueprint("schueler", __name__, template_folder="../templates")
 
 
