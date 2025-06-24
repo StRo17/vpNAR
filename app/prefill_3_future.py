@@ -20,6 +20,7 @@ USERNAME = os.getenv("WEBUNTIS_USER")
 PASSWORD = os.getenv("WEBUNTIS_PASSWORD")
 SCHOOL = os.getenv("WEBUNTIS_SCHOOL")
 
+
 # ─── Zielverzeichnis ─────────────────────────────────────────────────────────
 TARGET_DIR = BASEDIR / "data" / "3_future"
 TARGET_DIR.mkdir(parents=True, exist_ok=True)
