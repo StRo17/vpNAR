@@ -9,10 +9,12 @@ from utils import load_substitution_data, load_banner_json, HTML_REFRESH
 # Flask application
 app = Flask(__name__, template_folder="templates")
 
+
 # Banner JSON endpoint
 @app.route("/banner.json")
 def banner_api():
     return jsonify(load_banner_json())
+
 
 # Register blueprints
 from blueprints.schueler import bp as schueler_bp
