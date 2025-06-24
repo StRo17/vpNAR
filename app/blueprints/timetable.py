@@ -9,6 +9,7 @@ bp = Blueprint(
     template_folder="../templates",
 )
 
+
 @bp.route("/")
 def timetable_view():
     """Stundenplan-Rotator für alle Klassen."""

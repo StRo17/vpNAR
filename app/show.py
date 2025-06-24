@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 import logging
 from flask import Flask, jsonify
-from utils import load_substitution_data, load_banner_json
+from utils import load_banner_json
+
+# Blueprints müssen oben importiert werden (modul-level imports)
+from blueprints.schueler import bp as schueler_bp
+from blueprints.lehrer import bp as lehrer_bp
+from blueprints.timetable import bp as timetable_bp
 # app/show.py
 # Flask application
 app = Flask(__name__, template_folder="templates")
 
 
-# Banner JSON endpoint
 @app.route("/banner.json")
-def banner_api():
+def api_banner():
+    """API-Endpunkt für das Banner."""
     return jsonify(load_banner_json())
 
-
-# Register blueprints
-from blueprints.schueler import bp as schueler_bp
-from blueprints.lehrer import bp as lehrer_bp
-from blueprints.timetable import bp as timetable_bp
 
 app.register_blueprint(schueler_bp)
 app.register_blueprint(lehrer_bp)

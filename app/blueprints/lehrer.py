@@ -10,6 +10,7 @@ bp = Blueprint(
     template_folder="../templates",
 )
 
+
 @bp.route("/")
 def teacher_view():
     """Lehrer-Vertretungsplan (nur NEU)."""
