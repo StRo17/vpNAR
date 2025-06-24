@@ -2,14 +2,17 @@ SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 TZ=Europe/Berlin
 
-# 1) alle 3 Min.: aktuelle WebUntis-Daten nach /app/data/actual
-*/3 * * * * cd /app && python3 actual_load.py   >> /app/logs/actual_load.log 2>&1
+# 1) alle 3 Min.: aktuelle WebUntis-Daten → /app/data/actual
+*/3 * * * *  root  cd /app && python3 actual_load.py       >> /app/logs/actual_load.log 2>&1
 
 # 2) alle 3 Min.: actual vs. original vergleichen → /app/data/vertretungen
-*/3 * * * * cd /app && python3 compare.py       >> /app/logs/compare.log    2>&1
+*/3 * * * *  root  cd /app && python3 compare.py           >> /app/logs/compare.log    2>&1
 
 # 3) täglich 07:30: File-Rotation & Sortieren
-30 7 * * *   cd /app && python3 shift.py         >> /app/logs/shift.log      2>&1
+30 7 * * *    root  cd /app && python3 shift.py             >> /app/logs/shift.log      2>&1
 
-# 4) Safeguard täglich 07:35: frische Originaldaten
-35 7 * * *   cd /app && python3 original_load.py >> /app/logs/original_load.log 2>&1
+# 4) täglich 07:35: frische Originaldaten
+35 7 * * *    root  cd /app && python3 original_load.py     >> /app/logs/original_load.log 2>&1
+
+
+

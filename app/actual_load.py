@@ -5,7 +5,6 @@ data/actual/<klasse>_<YYYY-MM-DD>.json ab.
 """
 import json
 import logging
-import sys
 import os
 from datetime import date
 from pathlib import Path
@@ -55,9 +54,8 @@ def save_timetable(session, klass, dt):
     table = session.timetable(klasse=klass, start=dt, end=dt)
     if not table:
         logging.warning(f"Keine Einträge für {klass.name} am {dt}")
-        return
     out = []
-    for p in table:
+    for p in table or []:
         out.append(
             {
                 "start": p.start.strftime("%H:%M"),
@@ -77,11 +75,20 @@ def save_timetable(session, klass, dt):
 def main():
     heute = date.today()
     try:
-        with login() as session:
-            for klass in session.klassen():
-                save_timetable(session, klass, heute)
+        session = login()
     except Exception as e:
-        logging.error(f"Fehler: {e}")
+        logging.error(f"Fehler beim Login: {e}")
+        return
+
+    for klass in session.klassen():
+        try:
+            save_timetable(session, klass, heute)
+        except Exception as e:
+            logging.error(f"Fehler bei {klass.name}: {e}")
+    try:
+        session.logout()
+    except Exception:
+        pass
 
 
 if __name__ == "__main__":
