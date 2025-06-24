@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Banner-Konfiguration</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    label { margin-right: 20px; }
+    textarea { width: 100%; height: 80%; margin-top: 10px; }
+    button { margin-top: 5px; padding: 8px 16px; }
+  </style>
+</head>
+<body>
+  <h2>Banner konfigurieren</h2>
+  <form method="post">
+    <label>
+      <input type="radio" name="mode" value="none" {% if mode=='none' %}checked{% endif %}>
+      Kein Text
+    </label>
+    <label>
+      <input type="radio" name="mode" value="text" {% if mode=='text' %}checked{% endif %}>
+      Text
+    </label>
+    <br>
+    <textarea name="text" placeholder="Bannertext hier eingeben...">{{ text }}</textarea>
+    <br>
+    <button type="submit">Speichern</button>
+  </form>
+</body>
+</html>

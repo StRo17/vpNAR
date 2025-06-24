@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stundenplan</title>
+    <meta http-equiv="refresh" content="{{ refresh_interval }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            width: 95vw;
+            height: 95vh;
+            overflow: hidden;
+        }
+        .banner, .fallback-title {
+            text-align: center;
+            font-size: 2.5vw;
+            font-weight: bold;
+            padding: 10px;
+        }
+        table {
+            width: 95%;
+            height: 75%;
+            border-collapse: collapse;
+            font-size: 1.3vw;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #0074D9;
+            color: white;
+        }
+    </style>
+    <script>
+        const groups = {{ groups | safe }};
+        const currentGroup = "{{ current_group }}";
+        let currentIndex = groups.indexOf(currentGroup);
+
+        function rotate() {
+            currentIndex = (currentIndex + 1) % groups.length;
+            const nextGroup = groups[currentIndex];
+            window.location.href = "/?group=" + encodeURIComponent(nextGroup);
+        }
+
+        setInterval(rotate, 10000);
+    </script>
+</head>
+<body>
+    <div class="fallback-title">Stundenplan für: {{ current_group }}</div>
+    <table>
+        <tr>
+            <th>Zeit</th>
+            {% for class_name in class_names %}
+            <th>{{ class_name }}</th>
+            {% endfor %}
+        </tr>
+        {% for time_slot in time_slots %}
+        <tr>
+            <td>{{ time_slot }}</td>
+            {% for class_name in class_names %}
+            <td>
+                {% for entry in class_data.get(class_name, []) %}
+                    {% if entry['Start'] + ' - ' + entry['End'] == time_slot %}
+                        {{ entry['Subject'] }} ({{ entry['Room'] }})<br>
+                    {% endif %}
+                {% endfor %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,17 +1,27 @@
 #!/usr/bin/env bash
-# ~/Vertretungen/app/start_all.sh
+# start_all.sh – Startscript für Vertretungsplan-Projekt
 
-# 1) Cron-Daemon im Hintergrund starten ;-)
+# 0) Fehler sofort anzeigen, wenn ein Befehl fehlschlägt
+set -e
+
+# 1) Starte den Cron-Dienst für zeitgesteuerte Tasks
+echo "[START] Starte cron-Dienst..."
 cron
 
-# 2) Show-Services starten (Student & Lehrer)
-python3 show.py &        # Port 5000/5001
+# 2) Starte die Schüler-Ansicht (Student-Frontend, Port aus config.py)
+echo "[START] Starte Schüleransicht..."
+python3 show.py &
 
-# 3) Stundenplan-Rotator starten
-python3 class_show.py &  # Port 5003
+# 3) Starte die Lehrer-Ansicht (Teacher-Frontend, ebenfalls in show.py enthalten)
+# (Bereits durch show.py auf anderem Port gestartet)
 
-# Banner starten (im Hintergrund)
-python3 /app/banner.py & # Port 5051
+# 4) Starte die Klassenrotation (klassengruppierte Ansicht)
+echo "[START] Starte Klassenrotation..."
+python3 class_show.py &
 
-# 5) Auf alle Kindprozesse warten, damit der Container aktiv bleibt
+# 5) Starte das Banner-Konfigurationsinterface
+echo "[START] Starte Bannereditor..."
+python3 banner.py &
+
+# 6) Warte auf alle Kindprozesse, damit der Container nicht beendet wird
 wait

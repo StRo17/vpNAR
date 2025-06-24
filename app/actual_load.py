@@ -5,7 +5,7 @@ data/actual/<klasse>_<YYYY-MM-DD>.json ab.
 """
 import json
 import logging
-import sys
+import os
 from datetime import date
 from pathlib import Path
 from dotenv import load_dotenv
@@ -15,10 +15,10 @@ import webuntis
 BASEDIR = Path(__file__).parent
 load_dotenv(dotenv_path=BASEDIR.parent / ".env")
 
-SERVER = sys.getenv("WEBUNTIS_SERVER")
-USERNAME = sys.getenv("WEBUNTIS_USER")
-PASSWORD = sys.getenv("WEBUNTIS_PASSWORD")
-SCHOOL = sys.getenv("WEBUNTIS_SCHOOL")
+SERVER = os.getenv("WEBUNTIS_SERVER")
+USERNAME = os.getenv("WEBUNTIS_USER")
+PASSWORD = os.getenv("WEBUNTIS_PASSWORD")
+SCHOOL = os.getenv("WEBUNTIS_SCHOOL")
 
 # ─── Zielverzeichnis ─────────────────────────────────────────────────────────
 TARGET_DIR = BASEDIR / "data" / "actual"
@@ -54,19 +54,16 @@ def save_timetable(session, klass, dt):
     table = session.timetable(klasse=klass, start=dt, end=dt)
     if not table:
         logging.warning(f"Keine Einträge für {klass.name} am {dt}")
-        return
     out = []
-    for p in table:
-        out.append(
-            {
-                "start": p.start.strftime("%H:%M"),
-                "end": p.end.strftime("%H:%M"),
-                "subjects": extract_list(getattr(p, "subjects", [])),
-                "teachers": extract_list(getattr(p, "teachers", [])),
-                "rooms": extract_list(getattr(p, "rooms", [])),
-                "info": getattr(p, "code", None) or getattr(p, "info", None),
-            }
-        )
+    for p in (table or []):
+        out.append({
+            "start": p.start.strftime("%H:%M"),
+            "end":   p.end.strftime("%H:%M"),
+            "subjects": extract_list(getattr(p, "subjects", [])),
+            "teachers": extract_list(getattr(p, "teachers", [])),
+            "rooms":    extract_list(getattr(p, "rooms", [])),
+            "info":     getattr(p, "code", None) or getattr(p, "info", None),
+        })
     fn = f"{klass.name.lower().replace(' ', '')}_{dt.isoformat()}.json"
     fp = TARGET_DIR / fn
     fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -76,11 +73,20 @@ def save_timetable(session, klass, dt):
 def main():
     heute = date.today()
     try:
-        with login() as session:
-            for klass in session.klassen():
-                save_timetable(session, klass, heute)
+        session = login()
     except Exception as e:
-        logging.error(f"Fehler: {e}")
+        logging.error(f"Fehler beim Login: {e}")
+        return
+
+    for klass in session.klassen():
+        try:
+            save_timetable(session, klass, heute)
+        except Exception as e:
+            logging.error(f"Fehler bei {klass.name}: {e}")
+    try:
+        session.logout()
+    except Exception:
+        pass
 
 
 if __name__ == "__main__":

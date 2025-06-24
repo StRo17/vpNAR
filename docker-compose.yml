@@ -1,23 +1,6 @@
 version: '3.8'
-
 services:
-  tv-keeper:
-    image: tv-keeper:latest
-    build:
-      context: ./tv-keeper
-      dockerfile: Dockerfile
-    privileged: true
-    devices:
-      - /dev/vchiq:/dev/vchiq
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "echo 'on 0' | cec-client -s -d 1"]
-      interval: 1m
-      timeout: 10s
-      retries: 3
-
   app:
-    image: vertretungen_app:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -26,19 +9,23 @@ services:
       - ./.env
     volumes:
       - ./app:/app
-      - ./app/data:/app/data
-      - ./app/logs:/app/logs
-      - ./app/banner_config.json:/app/banner_config.json
     ports:
-      - "5000:5000"  # Schüler
-      - "5001:5001"  # Lehrer
-      - "5003:5003"  # Stundenplan-Rotator
-      - "5010:5010"  # Banner
+      - "8080:5000"   # → Schüler + Lehrer + Stundenplan
+      - "5003:5003"   # → Schulkonfiguration
+      - "5010:5010"   # → Banner-Editor/API
     depends_on:
       - tv-keeper
-    command: ["/app/start_all.sh"]
+
+  tv-keeper:
+    build:
+      context: ./tv-keeper
+      dockerfile: Dockerfile
+    privileged: true
+    devices:
+      - /dev/vchiq:/dev/vchiq
+    restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
-      interval: 30s
-      timeout: 5s
+      test: ["CMD-SHELL","echo 'on 0' | cec-client -s -d 1"]
+      interval: 1m
+      timeout: 10s
       retries: 3
