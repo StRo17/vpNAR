@@ -8,8 +8,9 @@ import logging
 import os
 from datetime import date, timedelta
 from pathlib import Path
-from dotenv import load_dotenv
+
 import webuntis
+from dotenv import load_dotenv
 
 # ─── Basispfad & Env ─────────────────────────────────────────────────────────
 BASEDIR = Path(__file__).parent
@@ -25,9 +26,11 @@ SCHOOL = os.getenv("WEBUNTIS_SCHOOL")
 TARGET_DIR = BASEDIR / "data" / "3_future"
 TARGET_DIR.mkdir(parents=True, exist_ok=True)
 
+
 def extract_list(obj_list):
     names = [getattr(o, "name", None) for o in (obj_list or [])]
     return [n for n in names if n] or ["Unbekannt"]
+
 
 def main():
     # Initial log
@@ -84,14 +87,16 @@ def main():
                     table = session.timetable(klasse=klass, start=dt, end=dt)
                     out = []
                     for p in table:
-                        out.append({
-                            "start":    p.start.strftime("%H:%M"),
-                            "end":      p.end.strftime("%H:%M"),
-                            "subjects": extract_list(getattr(p, "subjects", [])),
-                            "teachers": extract_list(getattr(p, "teachers", [])),
-                            "rooms":    extract_list(getattr(p, "rooms", [])),
-                            "info":     getattr(p, "code", None) or getattr(p, "info", None),
-                        })
+                        out.append(
+                            {
+                                "start": p.start.strftime("%H:%M"),
+                                "end": p.end.strftime("%H:%M"),
+                                "subjects": extract_list(getattr(p, "subjects", [])),
+                                "teachers": extract_list(getattr(p, "teachers", [])),
+                                "rooms": extract_list(getattr(p, "rooms", [])),
+                                "info": getattr(p, "code", None) or getattr(p, "info", None),
+                            }
+                        )
                     fn = f"{klass.name.lower().replace(' ', '')}_{ds}.json"
                     fp = TARGET_DIR / fn
                     fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -109,6 +114,7 @@ def main():
             session.logout()
         except Exception:
             pass
+
 
 if __name__ == "__main__":
     main()

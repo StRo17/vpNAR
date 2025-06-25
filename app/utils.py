@@ -1,9 +1,10 @@
-import os
 import json
 import logging
+import os
 from datetime import date
 
 HTML_REFRESH = 60  # Sekündliches Refresh-Intervall
+
 
 def load_substitution_data(subfolder=None):
     """Lädt Vertretungen (compare.py output) aus data/vertretungen."""
@@ -36,6 +37,7 @@ def load_substitution_data(subfolder=None):
             except Exception:
                 out[klass] = []
     return out
+
 
 def load_banner_json():
     """Lädt Banner-Konfiguration."""

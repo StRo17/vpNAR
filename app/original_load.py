@@ -7,8 +7,9 @@ import logging
 import os
 from datetime import datetime, timedelta
 from pathlib import Path
-from dotenv import load_dotenv
+
 import webuntis
+from dotenv import load_dotenv
 
 # ─── Basispfad & Env ─────────────────────────────────────────────────────────
 BASEDIR = Path(__file__).parent
@@ -67,15 +68,12 @@ def main():
                             "subjects": extract_list(getattr(p, "subjects", [])),
                             "teachers": extract_list(getattr(p, "teachers", [])),
                             "rooms": extract_list(getattr(p, "rooms", [])),
-                            "info": getattr(p, "code", None)
-                            or getattr(p, "info", None),
+                            "info": getattr(p, "code", None) or getattr(p, "info", None),
                         }
                     )
                 fn = f"{klass.name.lower().replace(' ', '')}_{ds}.json"
                 fp = TARGET_DIR / fn
-                fp.write_text(
-                    json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"
-                )
+                fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
                 logging.info(f"✔ {fn}")
     except Exception as e:
         logging.error(f"Fehler: {e}")

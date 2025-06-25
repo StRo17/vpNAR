@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
-import os
-import json
+from blueprints.timetable import bp as timetable_bp
+from blueprints.schueler import bp as schueler_bp
+from blueprints.lehrer import bp as lehrer_bp
 import logging
-from datetime import date
+
 from flask import Flask, jsonify
-from utils import load_substitution_data, load_banner_json, HTML_REFRESH
+from utils import load_banner_json
 
 # Flask application
 app = Flask(__name__, template_folder="templates")
+
 
 # Banner JSON endpoint
 @app.route("/banner.json")
 def banner_api():
     return jsonify(load_banner_json())
 
-# Register blueprints
-from blueprints.schueler import bp as schueler_bp
-from blueprints.lehrer import bp as lehrer_bp
-from blueprints.timetable import bp as timetable_bp
 
+# Register blueprints
 app.register_blueprint(schueler_bp)
 app.register_blueprint(lehrer_bp)
 app.register_blueprint(timetable_bp)

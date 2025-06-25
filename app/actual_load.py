@@ -8,8 +8,9 @@ import logging
 import os
 from datetime import date
 from pathlib import Path
-from dotenv import load_dotenv
+
 import webuntis
+from dotenv import load_dotenv
 
 # ─── Basispfad & Env ─────────────────────────────────────────────────────────
 BASEDIR = Path(__file__).parent
@@ -56,15 +57,17 @@ def save_timetable(session, klass, dt):
     if not table:
         logging.warning(f"Keine Einträge für {klass.name} am {dt}")
     out = []
-    for p in (table or []):
-        out.append({
-            "start": p.start.strftime("%H:%M"),
-            "end":   p.end.strftime("%H:%M"),
-            "subjects": extract_list(getattr(p, "subjects", [])),
-            "teachers": extract_list(getattr(p, "teachers", [])),
-            "rooms":    extract_list(getattr(p, "rooms", [])),
-            "info":     getattr(p, "code", None) or getattr(p, "info", None),
-        })
+    for p in table or []:
+        out.append(
+            {
+                "start": p.start.strftime("%H:%M"),
+                "end": p.end.strftime("%H:%M"),
+                "subjects": extract_list(getattr(p, "subjects", [])),
+                "teachers": extract_list(getattr(p, "teachers", [])),
+                "rooms": extract_list(getattr(p, "rooms", [])),
+                "info": getattr(p, "code", None) or getattr(p, "info", None),
+            }
+        )
     fn = f"{klass.name.lower().replace(' ', '')}_{dt.isoformat()}.json"
     fp = TARGET_DIR / fn
     fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")

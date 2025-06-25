@@ -11,13 +11,11 @@ delta > 21: unbehandelt
 """
 import logging
 import shutil
-from pathlib import Path
 from datetime import date
+from pathlib import Path
 
 # ──────────────────────────────────────────────────────────────────────────────
-logging.basicConfig(
-    level=logging.INFO, format="[%(asctime)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
-)
+logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 
 BASE = Path("./data")
 DIR_ORIG = BASE / "original"

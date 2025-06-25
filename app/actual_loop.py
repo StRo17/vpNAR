@@ -1,6 +1,6 @@
 # nur für lokalen Test - auf Pi Linux dann automatisieren über cron, systemd
-import time
 import subprocess
+import time
 
 while True:
     print("📥 Lade aktuelle Pläne...")
