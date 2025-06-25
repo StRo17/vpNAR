@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
+"""
+Vergleicht ./data/actual/*_<yyyy-mm-dd>.json mit
+./data/original/*_<yyyy-mm-dd>.json und schreibt Änderungen nach
+data/vertretungen/schueler/schueler_<yyyy-mm-dd>.json
+und data/vertretungen/lehrer/lehrer_<yyyy-mm-dd>.json
+"""
 import json
 import logging
-from pathlib import Path
 from datetime import date
+from pathlib import Path
 
 logging.basicConfig(
     level=logging.INFO,

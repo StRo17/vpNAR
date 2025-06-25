@@ -1,6 +1,6 @@
-import os
 import json
 import logging
+import os
 from datetime import date
 
 HTML_REFRESH = 60  # Sekündliches Refresh-Intervall

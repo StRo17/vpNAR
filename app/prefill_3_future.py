@@ -6,20 +6,21 @@ und speichert sie in data/3_future/<klasse>_<YYYY-MM-DD>.json.
 import json
 import logging
 import os
-from pathlib import Path
-from dotenv import load_dotenv
-import webuntis
 from datetime import date, timedelta
+from pathlib import Path
+
+import webuntis
+from dotenv import load_dotenv
 
 # ─── Basispfad & Env ─────────────────────────────────────────────────────────
 BASEDIR = Path(__file__).parent
-load_dotenv(dotenv_path=BASEDIR.parent / ".env")
+# Lade die .env im Anwendungsverzeichnis (nicht /)
+load_dotenv(dotenv_path=BASEDIR / ".env")
 
 SERVER = os.getenv("WEBUNTIS_SERVER")
 USERNAME = os.getenv("WEBUNTIS_USER")
 PASSWORD = os.getenv("WEBUNTIS_PASSWORD")
 SCHOOL = os.getenv("WEBUNTIS_SCHOOL")
-
 
 # ─── Zielverzeichnis ─────────────────────────────────────────────────────────
 TARGET_DIR = BASEDIR / "data" / "3_future"

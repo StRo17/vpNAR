@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import os
 import json
 import logging
-from flask import Flask, render_template, request
-import config
+import os
 
+import config
+from flask import Flask, render_template, request
 
 logging.basicConfig(
     level=logging.INFO,

@@ -1,4 +1,3 @@
 flask
 webuntis
 python-dotenv
-black

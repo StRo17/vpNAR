@@ -18,3 +18,4 @@ __pycache__/
 # IDE & Git selbst
 .vscode/
 .git/
+.DS_Store

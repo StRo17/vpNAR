@@ -8,12 +8,14 @@ import logging
 import os
 from datetime import date
 from pathlib import Path
-from dotenv import load_dotenv
+
 import webuntis
+from dotenv import load_dotenv
 
 # ─── Basispfad & Env ─────────────────────────────────────────────────────────
 BASEDIR = Path(__file__).parent
-load_dotenv(dotenv_path=BASEDIR.parent / ".env")
+# Lade die .env im Anwendungsverzeichnis (nicht /)
+load_dotenv(dotenv_path=BASEDIR / ".env")
 
 SERVER = os.getenv("WEBUNTIS_SERVER")
 USERNAME = os.getenv("WEBUNTIS_USER")

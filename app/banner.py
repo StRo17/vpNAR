@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
 import json
-import logging
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+
 import config
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 
 app = Flask(__name__, template_folder="templates")
 
 
 def load_cfg():
     try:
-        with open(config.BANNER_CONFIG_PATH, encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        logging.exception("Fehler beim Laden der Banner-Konfiguration")
+        return json.loads(open(config.BANNER_CONFIG_PATH, encoding="utf-8").read())
+    except BaseException:
         return {"mode": "none", "text": ""}
 
 
