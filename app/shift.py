@@ -15,7 +15,9 @@ from pathlib import Path
 from datetime import date
 
 # ──────────────────────────────────────────────────────────────────────────────
-logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+logging.basicConfig(
+    level=logging.INFO, format="[%(asctime)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
+)
 
 BASE = Path("./data")
 DIR_ORIG = BASE / "original"

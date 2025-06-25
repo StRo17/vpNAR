@@ -13,12 +13,13 @@ COPY ./app/ /app/
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN mkdir -p /app/logs \
+ && chmod +x /app/start_all.sh
+
+# ─── Cron-Jobs kopieren und freigeben ───────────────────────────────────
 COPY webuntis-crontab /etc/cron.d/webuntis-crontab
 RUN chmod 0644 /etc/cron.d/webuntis-crontab \
  && crontab /etc/cron.d/webuntis-crontab
-
-RUN mkdir -p /app/logs \
- && chmod +x /app/start_all.sh
 
 CMD ["/app/start_all.sh"]
 

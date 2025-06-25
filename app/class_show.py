@@ -14,34 +14,30 @@ logging.basicConfig(
 
 app = Flask(__name__, template_folder="templates")
 
-
 def load_all_data():
     d = {}
-    base = getattr(config, "ACTUAL_DIR", None) or os.path.join(os.path.dirname(__file__), "data", "actual")
+    base = getattr(config, 'ACTUAL_DIR', None) or os.path.join(os.path.dirname(__file__), 'data', 'actual')
     if not os.path.isdir(base):
         return d
     for f in os.listdir(base):
-        if not f.endswith(".json"):
+        if not f.endswith('.json'):
             continue
         try:
-            raw = json.loads(open(os.path.join(base, f), encoding="utf-8").read())
+            raw = json.loads(open(os.path.join(base, f), encoding='utf-8').read())
         except Exception:
             raw = []
-        cls = f.split("_", 1)[0]
+        cls = f.split('_', 1)[0]
         entries = []
         for e in raw:
-            entries.append(
-                {
-                    "Start": e.get("start", ""),
-                    "End": e.get("end", ""),
-                    "Subject": e.get("subjects", [""])[0],
-                    "Room": e.get("rooms", [""])[0],
-                    "Teacher": e.get("teachers", [""])[0],
-                }
-            )
+            entries.append({
+                "Start": e.get("start", ""),
+                "End": e.get("end", ""),
+                "Subject": e.get("subjects", [""])[0],
+                "Room": e.get("rooms", [""])[0],
+                "Teacher": e.get("teachers", [""])[0],
+            })
         d.setdefault(cls, []).extend(entries)
     return d
-
 
 def get_groups(data):
     grp = {"05": [], "06": [], "07": [], "08": [], "09": [], "10": [], "IFS": [], "EF": [], "Q1": [], "Q2": []}
@@ -58,7 +54,6 @@ def get_groups(data):
         elif c.startswith("Q2"):
             grp["Q2"].append(c)
     return {g: v for g, v in grp.items() if v}
-
 
 @app.route("/")
 def show():
@@ -77,7 +72,6 @@ def show():
         current_group=g,
         refresh_interval=config.HTML_REFRESH_INTERVAL,
     )
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=config.PORT_ROTATOR, debug=config.DEBUG_MODE)
