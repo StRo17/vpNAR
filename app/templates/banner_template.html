@@ -26,33 +26,11 @@
     <h2>Banner konfigurieren</h2>
     <form method="post">
       <label>
-        <input
-          type="radio"
-          name="mode"
-          value="none"
-          {%
-          if
-          mode=""
-          ="none"
-          %}checked{%
-          endif
-          %}
-        />
+        <input type="radio" name="mode" value="none" {% if mode == "none" %}checked{% endif %} />
         Kein Text
       </label>
       <label>
-        <input
-          type="radio"
-          name="mode"
-          value="text"
-          {%
-          if
-          mode=""
-          ="text"
-          %}checked{%
-          endif
-          %}
-        />
+        <input type="radio" name="mode" value="text" {% if mode == "text" %}checked{% endif %} />
         Text
       </label>
       <br />
