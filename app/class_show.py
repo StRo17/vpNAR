@@ -4,6 +4,7 @@ import logging
 import os
 
 import config
+from datetime import date
 from flask import Flask, render_template, request
 
 logging.basicConfig(
@@ -76,6 +77,8 @@ def get_groups(data):
 @app.route("/")
 def show():
     data = load_all_data()
+    today_str = date.today().isoformat()
+    data = {cls: [e for e in entries if e.get("date", "") == today_str] for cls, entries in data.items()}
     groups = get_groups(data)
     keys = list(groups)
     g = request.args.get("group", keys[0] if keys else "")
