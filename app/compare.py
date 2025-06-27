@@ -70,7 +70,9 @@ def main():
     sch_dir = DIR_DIFF / "schueler"
     sch_dir.mkdir(parents=True, exist_ok=True)
     sch_file = sch_dir / f"schueler_{today}.json"
-    sch_file.write_text(json.dumps(diffs_by_class, ensure_ascii=False, indent=2), encoding="utf-8")
+    sch_file.write_text(
+        json.dumps(diffs_by_class, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     logging.info("→ %s", sch_file)
 
     # 3) Lehrer-Aggregat
@@ -94,7 +96,9 @@ def main():
     l_dir = DIR_DIFF / "lehrer"
     l_dir.mkdir(parents=True, exist_ok=True)
     l_file = l_dir / f"lehrer_{today}.json"
-    l_file.write_text(json.dumps(lehrer_list, ensure_ascii=False, indent=2), encoding="utf-8")
+    l_file.write_text(
+        json.dumps(lehrer_list, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     logging.info("→ %s", l_file)
 
 

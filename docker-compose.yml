@@ -10,10 +10,14 @@ services:
     volumes:
       - ./app:/app
       - ./.env:/app/.env:ro
+      - ./app/templates:/app/templates
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
     ports:
       - "8080:5000"   # → Schüler + Lehrer + Stundenplan
-      - "5003:5003"   # → Schulkonfiguration
-      - "5010:5010"   # → Banner-Editor/API
+      - "8081:5003"   # → Schulkonfiguration
+      - "8089:5010"   # → Banner-Editor/API
     depends_on:
       - tv-keeper
 

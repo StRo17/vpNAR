@@ -1,30 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Banner-Konfiguration</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    label { margin-right: 20px; }
-    textarea { width: 100%; height: 80%; margin-top: 10px; }
-    button { margin-top: 5px; padding: 8px 16px; }
-  </style>
-</head>
-<body>
-  <h2>Banner konfigurieren</h2>
-  <form method="post">
-    <label>
-      <input type="radio" name="mode" value="none" {% if mode=='none' %}checked{% endif %}>
-      Kein Text
-    </label>
-    <label>
-      <input type="radio" name="mode" value="text" {% if mode=='text' %}checked{% endif %}>
-      Text
-    </label>
-    <br>
-    <textarea name="text" placeholder="Bannertext hier eingeben...">{{ text }}</textarea>
-    <br>
-    <button type="submit">Speichern</button>
-  </form>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Banner-Konfiguration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        margin-right: 20px;
+      }
+      textarea {
+        width: 100%;
+        height: 80%;
+        margin-top: 10px;
+      }
+      button {
+        margin-top: 5px;
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Banner konfigurieren</h2>
+    <form method="post">
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          value="none"
+          {%
+          if
+          mode=""
+          ="none"
+          %}checked{%
+          endif
+          %}
+        />
+        Kein Text
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          value="text"
+          {%
+          if
+          mode=""
+          ="text"
+          %}checked{%
+          endif
+          %}
+        />
+        Text
+      </label>
+      <br />
+      <textarea name="text" placeholder="Bannertext hier eingeben...">
+{{ text }}</textarea
+      >
+      <br />
+      <button type="submit">Speichern</button>
+    </form>
+
+    <form method="post" action="/run_script">
+      <button type="submit" name="script" value="shift">
+        Shift jetzt ausführen
+      </button>
+      <button type="submit" name="script" value="actual_load">
+        Actual Load ausführen
+      </button>
+      <button type="submit" name="script" value="original_load">
+        Original Load ausführen
+      </button>
+      <button type="submit" name="script" value="compare">
+        Compare ausführen
+      </button>
+    </form>
+    <form method="post" action="/reset">
+      <button type="submit">Zurücksetzen</button>
+    </form>
+    {% if error %}
+    <p style="color: red">{{ error }}</p>
+    {% endif %} {% if success %}
+    <p style="color: green">{{ success }}</p>
+    {% endif %}
+    <h3>Aktuelle Konfiguration:</h3>
+    <p>Modus: {{ mode }}</p>
+    <p>Text: {{ text }}</p>
+    <h3>Aktuelle Banner:</h3>
+    <ul>
+      {% for banner in banners %}
+      <li>
+        <strong>{{ banner.mode }}</strong>: {{ banner.text }}
+        <form method="post" action="/delete_banner/{{ loop.index0 }}">
+          <button type="submit">Löschen</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+    <h3>Alle Banner löschen:</h3>
+    <form method="post" action="/delete_all_banners">
+      <button type="submit">Alle Banner löschen</button>
+    </form>
+  </body>
 </html>

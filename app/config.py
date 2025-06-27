@@ -3,7 +3,7 @@ import os
 # app/config.py
 
 # Debug
-DEBUG_MODE = False
+DEBUG_MODE = True
 
 # Cron-Intervalle (Sekunden)
 RELOAD_INTERVAL = 7.15 * 60  # substitution load
