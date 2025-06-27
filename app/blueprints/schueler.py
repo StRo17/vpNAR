@@ -13,5 +13,9 @@ def student_view():
     data = {kl: [p for p in ps if p.get("status") == "NEU"] for kl, ps in data.items()}
     banner = load_banner_json()
     return render_template(
-        "student_template.html", data=data, banner=banner, today=date.today().isoformat(), refresh=HTML_REFRESH
+        "student_template.html",
+        data=data,
+        banner=banner,
+        today=date.today().isoformat(),
+        refresh=HTML_REFRESH,
     )

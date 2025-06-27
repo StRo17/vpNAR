@@ -66,7 +66,9 @@ def main():
                     end_date = sy.endDate
                     break
             if end_date is None:
-                logging.warning("Aktives Schuljahr nicht gefunden, verwende OFFSET_DAYS")
+                logging.warning(
+                    "Aktives Schuljahr nicht gefunden, verwende OFFSET_DAYS"
+                )
                 days = abs(env_days) or 35
             else:
                 days = (end_date - today).days
@@ -94,12 +96,15 @@ def main():
                                 "subjects": extract_list(getattr(p, "subjects", [])),
                                 "teachers": extract_list(getattr(p, "teachers", [])),
                                 "rooms": extract_list(getattr(p, "rooms", [])),
-                                "info": getattr(p, "code", None) or getattr(p, "info", None),
+                                "info": getattr(p, "code", None)
+                                or getattr(p, "info", None),
                             }
                         )
                     fn = f"{klass.name.lower().replace(' ', '')}_{ds}.json"
                     fp = TARGET_DIR / fn
-                    fp.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+                    fp.write_text(
+                        json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"
+                    )
                     logging.info(f"✔ {fn}")
                 except Exception as e:
                     logging.error(f"Fehler beim Prefill für {klass.name} am {ds}: {e}")

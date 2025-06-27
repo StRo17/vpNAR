@@ -19,3 +19,7 @@ __pycache__/
 .vscode/
 .git/
 .DS_Store
+
+# Dependencies & cache
+node_modules/
+.cache/

@@ -2,19 +2,19 @@
 
 Dieses Repository enthält zwei Dockerized-Services:
 
-1. **vertretungen_app**  
-   - Flask-Webservice für Schüler- & Lehrer-Vertretungspläne  
-   - Lädt via WebUntis-API aktuelle und zukünftige Stundenpläne  
-   - Cron-Jobs für regelmäßige Updates  
+1. **vertretungen_app**
+   - Flask-Webservice für Schüler- & Lehrer-Vertretungspläne
+   - Lädt via WebUntis-API aktuelle und zukünftige Stundenpläne
+   - Cron-Jobs für regelmäßige Updates
    - Banner-Anzeige per JSON-Config
 
-2. **tv-keeper**  
-   - Hält per HDMI-CEC den TV wach  
+2. **tv-keeper**
+   - Hält per HDMI-CEC den TV wach
    - Läuft als Side-Car und stellt sicher, dass der Bildschirm nicht in Standby geht
 
 ## Voraussetzungen
 
-- Docker & Docker Compose  
+- Docker & Docker Compose
 - Raspberry Pi mit `/dev/vchiq` für CEC-Zugriff
 
 ## Installation

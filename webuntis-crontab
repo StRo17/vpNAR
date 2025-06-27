@@ -22,5 +22,3 @@ TZ=Europe/Berlin
 
 # 4) täglich 17:51: frische Originaldaten
 21 18 * * *    root  cd /app && . /app/.env && python3 original_load.py     >> /app/logs/original_load.log 2>&1
-
-

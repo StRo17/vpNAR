@@ -17,7 +17,9 @@ app = Flask(__name__, template_folder="templates")
 
 def load_all_data():
     d = {}
-    base = getattr(config, "ACTUAL_DIR", None) or os.path.join(os.path.dirname(__file__), "data", "actual")
+    base = getattr(config, "ACTUAL_DIR", None) or os.path.join(
+        os.path.dirname(__file__), "data", "actual"
+    )
     if not os.path.isdir(base):
         return d
     for f in os.listdir(base):
@@ -44,7 +46,18 @@ def load_all_data():
 
 
 def get_groups(data):
-    grp = {"05": [], "06": [], "07": [], "08": [], "09": [], "10": [], "IFS": [], "EF": [], "Q1": [], "Q2": []}
+    grp = {
+        "05": [],
+        "06": [],
+        "07": [],
+        "08": [],
+        "09": [],
+        "10": [],
+        "IFS": [],
+        "EF": [],
+        "Q1": [],
+        "Q2": [],
+    }
     for c in data:
         k = c[:2]
         if k in grp:
